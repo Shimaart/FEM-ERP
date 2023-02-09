@@ -6,4 +6,5 @@
     <x-content>
         <livewire:users.user-form />
     </x-content>
+
 </x-app-layout>
