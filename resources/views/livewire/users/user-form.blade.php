@@ -40,7 +40,7 @@
             <x-select class="block w-full" wire:model="assigned_role">
                 <option>{{ __('Не присвоена') }}</option>
                 @foreach($this->roles as $role)
-                    <option value="{{ $role->key }}">{{ $role->name }}</option>
+                <option value="{{ $role->key }}">{{ $role->name }}</option>
                 @endforeach
             </x-select>
             <x-jet-input-error for="assigned_role" class="mt-2" />
@@ -50,15 +50,15 @@
         <div class="col-span-6 sm:col-span-3">
             <x-jet-label for="assigned_role" value="{{ __('Полномочия') }}" />
             @if(!count($permissions))
-                <div class="text-sm text-gray-500">{{ __('Нет полномочий') }}</div>
+            <div class="text-sm text-gray-500">{{ __('Нет полномочий') }}</div>
             @elseif(in_array('*', $permissions))
-                <div class="text-sm text-gray-500">{{ __('Все полномочия') }}</div>
+            <div class="text-sm text-gray-500">{{ __('Все полномочия') }}</div>
             @else
-                <ul class="list-disc list-inside">
-                    @foreach($permissions as $permission)
-                        <li class="text-sm text-gray-500">{{ trans('permissions.' . $permission)  }}</li>
-                    @endforeach
-                </ul>
+            <ul class="list-disc list-inside">
+                @foreach($permissions as $permission)
+                <li class="text-sm text-gray-500">{{ trans('permissions.' . $permission) }}</li>
+                @endforeach
+            </ul>
             @endif
         </div>
     </x-slot>

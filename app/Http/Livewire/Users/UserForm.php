@@ -30,7 +30,7 @@ class UserForm extends Component
             'email' => ['required', 'email', 'unique:users,email,' . $this->user_id],
             'assigned_role' => ['required', 'string', 'max:255'],
             'password' => ['required_if:user_id,null', 'confirmed'],
-            'password_confirmation' => ['nullable','required_with:password','same:password'],
+            'password_confirmation' => ['nullable', 'required_with:password', 'same:password'],
             'assigned_role' => [
                 'nullable', Rule::in(collect(Jetstream::$roles)->pluck('key')->toArray())
             ]
@@ -51,7 +51,6 @@ class UserForm extends Component
         $this->assigned_role = $user->assigned_role;
         $role = Jetstream::findRole((string)$this->assigned_role);
         $this->permissions = $role->permissions ?? [];
-
     }
     public function updatedAssignedRole()
     {
@@ -68,8 +67,8 @@ class UserForm extends Component
             [
                 'name' => $this->name,
                 'email' => $this->email,
-                'assigned_role'=> $this->assigned_role,
-                'password'=> $this->password ? Hash::make($this->password) : $this->old_password
+                'assigned_role' => $this->assigned_role,
+                'password' => $this->password ? Hash::make($this->password) : $this->old_password
             ]
         );
 
@@ -80,7 +79,5 @@ class UserForm extends Component
         }
 
         $this->redirect('/users');
-
     }
-
 }

@@ -12,7 +12,7 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-        "karvaka/wired-select": "dev-main",
+        "karvaka/wired-select": "dev-develop",
         "karvaka/wired-table": "dev-main",
         "laravel/framework": "^8.12",
         "laravel/jetstream": "^2.1",
@@ -69,5 +69,11 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
-    }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "app/Packages/karvaka/wired-select"
+        }
+    ]
 }

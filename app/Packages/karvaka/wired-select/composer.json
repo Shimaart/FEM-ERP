@@ -1,0 +1,42 @@
+{
+    "name": "karvaka/wired-select",
+    "description": "Livewire select component.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitry Karvaka",
+            "email": "deathburger777@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.4|^8.0",
+        "livewire/livewire": "^2.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "orchestra/testbench": "^6.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Karvaka\\Wired\\Select\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Karvaka\\Wired\\Select\\WiredSelectServiceProvider"
+            ]
+        }
+    }
+}
