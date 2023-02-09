@@ -74,11 +74,13 @@ class UserForm extends Component
         );
 
         $this->emit('saved');
-        $this->reset();
 
         if ($user->id === Auth::id()) {
             $this->emit('refresh-navigation-dropdown');
         }
+
+        $this->redirect('/users');
+
     }
 
 }
