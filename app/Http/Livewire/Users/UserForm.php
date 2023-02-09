@@ -27,7 +27,7 @@ class UserForm extends Component
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'unique:users'],
+            'email' => ['required', 'email', 'unique:users,email,' . $this->user_id],
             'assigned_role' => ['required', 'string', 'max:255'],
             'password' => ['required_if:user_id,null', 'confirmed'],
             'password_confirmation' => ['nullable','required_with:password','same:password'],
